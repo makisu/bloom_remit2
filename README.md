@@ -66,6 +66,7 @@ Create a new agent under this partner
 BloomRemit2::Agent.create({ name: 'Seoul Branch' })
 ```
 
+**TODO: Update doesn't work at the moment**
 Update the attributes of an agent belonging to this partner
 ```ruby
 # PUT /api/v1/partners/:api_token/agents/:id
@@ -73,7 +74,7 @@ Update the attributes of an agent belonging to this partner
 agent_id = 'xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx',
 BloomRemit2::Agent.update(
   agent_id,
-  { name: 'Incheon Branch' }
+  name: 'Incheon Branch'
 )
 ```
 
