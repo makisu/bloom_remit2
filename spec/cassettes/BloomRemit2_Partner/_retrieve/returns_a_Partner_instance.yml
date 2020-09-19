@@ -1,0 +1,59 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://www.bloomremit.net/api/v1/partners/73b353d4-03c0-4b8e-a141-e91552a0c6d5
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      X-Api-Secret:
+      - 2d9273284f9ebbb4c5734638f1f50a3d
+      Cache-Control:
+      - no-cache
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"d4081c85abc6cd3882c8757a3a90b5bf"
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+      X-Content-Type-Options:
+      - nosniff
+      X-Download-Options:
+      - noopen
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      X-Request-Id:
+      - 832ce14e-ef4a-46ca-85da-ee0246335d9e
+      X-Runtime:
+      - '0.030431'
+      X-Xss-Protection:
+      - 1; mode=block
+      Date:
+      - Sat, 19 Sep 2020 07:29:02 GMT
+      Content-Length:
+      - '566'
+    body:
+      encoding: UTF-8
+      string: '{"id":"95f658c8-3025-40cb-a7d1-b2f318536f45","name":"Makisu Software
+        Consulting Services","slug":"makisu","domain":null,"active":true,"orig_currency":"PHP","dest_currency":"PHP","min_amount_in_orig_currency":0.0,"max_amount_in_orig_currency":0.0,"website":"https://makisu.co","address":"7F
+        Finman Building, 131 Tordesillas St, Salcedo Village","zip_code":"","country":"PH","phone":"","email":"hello@makisu.co","flat_fee_in_orig_currency":0.0,"forex_margin":0.0,"agent_ids":["91865374-af28-4c3d-b3a8-0b0d9a0e6d42"],"credit_in_php":23175.747119224,"credit_in_vnd":0.0}'
+  recorded_at: Sat, 19 Sep 2020 07:29:02 GMT
+recorded_with: VCR 6.0.0
