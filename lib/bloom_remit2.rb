@@ -5,6 +5,7 @@ require 'bloom_remit2/partner'
 require 'bloom_remit2/agent'
 require 'bloom_remit2/credit'
 require 'bloom_remit2/rate'
+require 'bloom_remit2/sender'
 
 module BloomRemit2
   include GemConfig::Base

@@ -323,18 +323,21 @@ BloomRemit2::Sender.create({
 
 Update the attributes of a sender belonging to this partner
 ```ruby
-# POST /api/v1/partners/:api_token/senders
+# PUT /api/v1/partners/:api_token/senders/:id
 
 BloomRemit2::Sender.update(
-  first_name: 'Luis',
-  last_name: 'Buenaventura',
-  mobile: "+639175551111",
-  address: "251 Salcedo St., Legaspi Village",
-  city: "Makati City",
-  country: "PH",
-  postal_code: "1600",
-  identification: {
-    url: "http://aws.amazon.com/bucket/image.jpg"
+  sender_id,
+  {
+    first_name: 'Luis',
+    last_name: 'Buenaventura',
+    mobile: "+639175551111",
+    address: "251 Salcedo St., Legaspi Village",
+    city: "Makati City",
+    country: "PH",
+    postal_code: "1600",
+    identification: {
+      url: "http://aws.amazon.com/bucket/image.jpg"
+    }
   }
 )
 ```
