@@ -206,29 +206,34 @@ Initiate a new money transfer by providing a recipient_id and a remittance hash
 ```ruby
 # POST /api/v1/partners/:api_token/senders/:sender_id/remittances
 
+sender_id = 'xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx'
 recipient_id = 'xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx'
-BloomRemit2::Remittance.create({
-  recipient_id: 1,
-  remittance: {
-    account_name: 'Luis Buenaventura',
-    account_number: '1234567890',
-    dest_currency: 'PHP',
-    flat_fee_in_orig_currency: 0,
-    forex_margin: 0,
-    orig_currency: 'PHP',
-    paid_in_orig_currency: 0,
-    payout_method: 'BPI',
-    receivable_in_dest_currency: 25000
+BloomRemit2::Remittance.execute(
+  sender_id,
+  {
+    recipient_id: 1,
+    remittance: {
+      account_name: 'Luis Buenaventura',
+      account_number: '1234567890',
+      dest_currency: 'PHP',
+      flat_fee_in_orig_currency: 0,
+      forex_margin: 0,
+      orig_currency: 'PHP',
+      paid_in_orig_currency: 0,
+      payout_method: 'BPI',
+      receivable_in_dest_currency: 25000
+    }
   }
-})
+)
 ```
 
 Show information about a given recipient along with their associated remittance
 ```ruby
 # GET /api/v1/partners/:api_token/senders/:sender_id/remittances/:id
 
+sender_id = 'xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx'
 remittance_id = 'xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx'
-BloomRemit2::Remittance.retrieve(remittance_id)
+BloomRemit2::Remittance.retrieve(sender_id, remittance_id)
 ```
 
 Cancel a remittance. Note that this change the status of the remittance to
@@ -237,10 +242,12 @@ the database
 ```ruby
 # DELETE /api/v1/partners/:api_token/senders/:sender_id/remittances/:id
 
-BloomRemit2::Remittance.cancel(remittance_id)
-BloomRemit2::Remittance.delete(remittance_id)
+sender_id = 'xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx'
+remittance_id = 'xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx'
+BloomRemit2::Remittance.cancel(sender_id, remittance_id)
 ```
 
+**TODO: This returns a 500 Internal Server error**
 Returns the total fees for a remittance amount and payout method
 
 In order to calculate the cost of a given remittance, you will need to provide
