@@ -1,0 +1,58 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://www.bloomremit.net/api/v1/partners/73b353d4-03c0-4b8e-a141-e91552a0c6d5/senders/aeaba496-292b-49d4-bacb-efb41be96d9f/recipients
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      X-Api-Secret:
+      - 2d9273284f9ebbb4c5734638f1f50a3d
+      Cache-Control:
+      - no-cache
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"c7068841d1e9a4f4083fe515a0ccc00e"
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+      X-Content-Type-Options:
+      - nosniff
+      X-Download-Options:
+      - noopen
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      X-Request-Id:
+      - f0a76002-83f4-474e-a417-7280057fc4cd
+      X-Runtime:
+      - '0.037727'
+      X-Xss-Protection:
+      - 1; mode=block
+      Date:
+      - Tue, 22 Sep 2020 00:43:45 GMT
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: '[{"id":"5be9faea-e2d1-4ad1-9532-27bf950eb40c","first_name":"John
+        Frank","last_name":"Panko","email":"panko@example.com","mobile":"639171234567","address":"1025 Roxas Boulevard","country":"PH","sender_id":"aeaba496-292b-49d4-bacb-efb41be96d9f","created_at":"2020-09-15T14:51:29.954+08:00","updated_at":"2020-09-15T14:51:29.954+08:00"}]'
+  recorded_at: Tue, 22 Sep 2020 00:43:45 GMT
+recorded_with: VCR 6.0.0

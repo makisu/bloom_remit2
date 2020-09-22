@@ -1,0 +1,61 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://www.bloomremit.net/api/v1/partners/73b353d4-03c0-4b8e-a141-e91552a0c6d5/senders/aeaba496-292b-49d4-bacb-efb41be96d9f/recipients
+    body:
+      encoding: UTF-8
+      string: '{"first_name":"Hello","last_name":"Tester","email":"hellotester@example.com","mobile":"639171234567","address":"1025
+        Roxas Boulevard","city":"Makati City","province":"Metro Manila","country":"PH"}'
+    headers:
+      X-Api-Secret:
+      - 2d9273284f9ebbb4c5734638f1f50a3d
+      Cache-Control:
+      - no-cache
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"2a7a4d8ce478c282bbcf70b1f933c79d"
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+      X-Content-Type-Options:
+      - nosniff
+      X-Download-Options:
+      - noopen
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      X-Request-Id:
+      - ccf19f9d-ea26-4eee-bd6f-b6b3181b0ff4
+      X-Runtime:
+      - '0.066551'
+      X-Xss-Protection:
+      - 1; mode=block
+      Date:
+      - Tue, 22 Sep 2020 01:12:38 GMT
+      Content-Length:
+      - '392'
+    body:
+      encoding: UTF-8
+      string: '{"recipient":{"id":"a114cf5a-40ba-40a9-9e4e-4cb8e7cdad45","first_name":"Hello","last_name":"Tester","email":"hellotester@example.com","mobile":"639171234567","address":"1025
+        Roxas Boulevard","city":"Makati City","state":"Metro Manila","country":"PH","sender_id":"aeaba496-292b-49d4-bacb-efb41be96d9f","created_at":"2020-09-22T09:12:38.313+08:00","updated_at":"2020-09-22T09:12:38.313+08:00"}}'
+  recorded_at: Tue, 22 Sep 2020 01:12:38 GMT
+recorded_with: VCR 6.0.0

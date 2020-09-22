@@ -126,25 +126,29 @@ The rate returned is defined as:
 
 Create a new recipient for a sender belonging to this partner
 ```ruby
-# POST /api/v1/partners/:api_token/senders/:sender_id/recipients
+# POST /api/v1/partners/:api_token/recipients
 
-BloomRemit2::Recipient.create({
-  first_name: 'Luis',
-  last_name: 'Buenaventura',
-  email: 'luis@bloom.solutions',
-  mobile: '639171234567',
-  address: '251 Salcedo St., Legaspi Village',
-  city: 'Makati City',
-  province: 'Metro Manila',
-  country: 'PH'
-})
+BloomRemit2::Recipient.create(
+  sender_id,
+  {
+    first_name: 'Luis',
+    last_name: 'Buenaventura',
+    email: 'luis@bloom.solutions',
+    mobile: '639171234567',
+    address: '251 Salcedo St., Legaspi Village',
+    city: 'Makati City',
+    province: 'Metro Manila',
+    country: 'PH'
+  }
+)
 ```
 
 List all recipients for a user belonging to this partner
 ```ruby
 # GET /api/v1/partners/:api_token/senders/:sender_id/recipients
 
-BloomRemit2::Recipient.list
+sender_id = 'xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx'
+BloomRemit2::Recipient.list(sender_id)
 ```
 
 Show details about a recipient of a given user, and their associated remittance
@@ -152,16 +156,19 @@ IDs
 ```ruby
 # GET /api/v1/partners/:api_token/senders/:sender_id/recipients/:id
 
+sender_id = 'xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx'
 recipient_id = 'xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx'
-BloomRemit2::Recipient.retrieve(recipient_id)
+BloomRemit2::Recipient.retrieve(sender_id, recipient_id)
 ```
 
 Update the attributes of a recipient of a user belonging to this partner
 ```ruby
 # PUT /api/v1/partners/:api_token/senders/:sender_id/recipients/:id
 
+sender_id = 'xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx'
 recipient_id = 'xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx'
 BloomRemit2::Recipient.update(
+  sender_id,
   recipient_id,
   {
     first_name: 'Luis',
@@ -180,8 +187,9 @@ Delete recipient record of a user belonging to this partner safely
 ```ruby
 # DELETE /api/v1/partners/:api_token/senders/:sender_id/recipients/:id
 
+sender_id = 'xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx'
 recipient_id = 'xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx'
-BloomRemit2::Recipient.delete(recipient_id)
+BloomRemit2::Recipient.delete(sender_id, recipient_id)
 ```
 
 ## Remittances
