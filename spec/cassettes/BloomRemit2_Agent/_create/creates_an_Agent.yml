@@ -1,0 +1,59 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://www.bloomremit.net/api/v1/partners/73b353d4-03c0-4b8e-a141-e91552a0c6d5/agents
+    body:
+      encoding: UTF-8
+      string: '{"agent":{"name":"Sample Agent 20200919"}}'
+    headers:
+      X-Api-Secret:
+      - 2d9273284f9ebbb4c5734638f1f50a3d
+      Cache-Control:
+      - no-cache
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"7d1a0c2477e08d2ab6826c18e22b058d"
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+      X-Content-Type-Options:
+      - nosniff
+      X-Download-Options:
+      - noopen
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      X-Request-Id:
+      - e0825e05-31b8-4560-8187-0be8ceed5d60
+      X-Runtime:
+      - '0.101347'
+      X-Xss-Protection:
+      - 1; mode=block
+      Date:
+      - Sat, 19 Sep 2020 07:34:17 GMT
+      Content-Length:
+      - '76'
+    body:
+      encoding: UTF-8
+      string: '{"name":"Sample Agent 20200919","id":"4acebc4c-5f8a-4c2d-83ee-27143d5c2509"}'
+  recorded_at: Sat, 19 Sep 2020 07:34:17 GMT
+recorded_with: VCR 6.0.0

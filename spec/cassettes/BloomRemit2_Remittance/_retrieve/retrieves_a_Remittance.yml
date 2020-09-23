@@ -1,0 +1,60 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://www.bloomremit.net/api/v1/partners/73b353d4-03c0-4b8e-a141-e91552a0c6d5/senders/aeaba496-292b-49d4-bacb-efb41be96d9f/remittances/131a5554-ccd0-4cc2-a787-c071cb814f92
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      X-Api-Secret:
+      - 2d9273284f9ebbb4c5734638f1f50a3d
+      Cache-Control:
+      - no-cache
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"8d56175660bde286153f204b225ce9c7"
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+      X-Content-Type-Options:
+      - nosniff
+      X-Download-Options:
+      - noopen
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      X-Request-Id:
+      - 52690db3-881c-41eb-b836-7215b082a3df
+      X-Runtime:
+      - '0.042321'
+      X-Xss-Protection:
+      - 1; mode=block
+      Date:
+      - Tue, 22 Sep 2020 06:37:57 GMT
+      Content-Length:
+      - '999'
+    body:
+      encoding: UTF-8
+      string: '{"recipient":{"id":"f63b7065-e910-467c-974c-c31859069efa","first_name":"Juan
+        Francisco","last_name":"Cruz","email":"juan@example.com","mobile":"639171234567","address":"1025
+        Roxas Boulevard","country":"PH","sender_id":"aeaba496-292b-49d4-bacb-efb41be96d9f","created_at":"2020-08-28T12:26:51.480+08:00","updated_at":"2020-08-28T12:26:51.480+08:00"},"remittance":{"id":"131a5554-ccd0-4cc2-a787-c071cb814f92","partner_id":"95f658c8-3025-40cb-a7d1-b2f318536f45","recipient_id":"f63b7065-e910-467c-974c-c31859069efa","orig_currency":"PHP","dest_currency":"PHP","paid_in_orig_currency":100100.0,"receivable_in_dest_currency":100000.0,"forex_margin":0.0,"flat_fee_in_orig_currency":0.0,"payout_method":"BPI","status":"completed","account_name":"Juan
+        Francisco Cruz","account_number":"9999999999","callback_url":"","teller_id":"31f62426-9217-4eba-9ab2-4964acbd85e1","sender_id":"aeaba496-292b-49d4-bacb-efb41be96d9f","client_external_id":"30fee7e0-f9a9-4313-bd30-25b52d924640"}}'
+  recorded_at: Tue, 22 Sep 2020 06:37:57 GMT
+recorded_with: VCR 6.0.0
