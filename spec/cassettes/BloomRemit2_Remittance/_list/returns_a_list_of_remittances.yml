@@ -1,0 +1,57 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://www.bloomremit.net/api/v1/partners/73b353d4-03c0-4b8e-a141-e91552a0c6d5/senders/aeaba496-292b-49d4-bacb-efb41be96d9f/remittances
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      X-Api-Secret:
+      - 2d9273284f9ebbb4c5734638f1f50a3d
+      Cache-Control:
+      - no-cache
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"128abadc2e9d8fe2788ab01ee5381bb2"
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+      X-Content-Type-Options:
+      - nosniff
+      X-Download-Options:
+      - noopen
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      X-Request-Id:
+      - 5a9f7aa7-9b95-4bf7-9853-43852fd3345a
+      X-Runtime:
+      - '0.028810'
+      X-Xss-Protection:
+      - 1; mode=block
+      Date:
+      - Tue, 22 Sep 2020 06:34:23 GMT
+      Content-Length:
+      - '488'
+    body:
+      encoding: UTF-8
+      string: '{"remittance_ids":["131a5554-ccd0-4cc2-a787-c071cb814f92","d4be7e90-4925-4103-98e2-32960cb86ef7","96230614-03e1-4ff1-9830-842ad6b3cdde","6ba96220-200a-4974-80b8-85c89f0b1bad","8ce326f2-305e-4df5-bc8e-0db5e0eb1943","da26b45a-86c4-424e-8bcb-ff7440a8fd9e","51351c6e-b815-4183-9275-1e1e8478e9a5","d2f95f85-11cf-4310-9990-fd766caf9725","34e95f9b-34c5-47c2-bf7f-836d24bcab37","bef43091-6066-43dc-8cc8-a598c95bef07","fc14c27d-694f-4eeb-8b79-8480aeb062ec","bd19bc1c-4251-4d19-928f-66e1280209c5"]}'
+  recorded_at: Tue, 22 Sep 2020 06:34:23 GMT
+recorded_with: VCR 6.0.0

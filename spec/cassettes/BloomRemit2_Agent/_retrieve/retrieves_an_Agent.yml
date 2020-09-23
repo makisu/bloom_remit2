@@ -1,0 +1,57 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://www.bloomremit.net/api/v1/partners/73b353d4-03c0-4b8e-a141-e91552a0c6d5/agents/91865374-af28-4c3d-b3a8-0b0d9a0e6d42
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      X-Api-Secret:
+      - 2d9273284f9ebbb4c5734638f1f50a3d
+      Cache-Control:
+      - no-cache
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"7d7a2cf119ded60da4500bd73933cfde"
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+      X-Content-Type-Options:
+      - nosniff
+      X-Download-Options:
+      - noopen
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      X-Request-Id:
+      - 18e49824-7106-403b-93c4-befaf4cbdbc8
+      X-Runtime:
+      - '0.028157'
+      X-Xss-Protection:
+      - 1; mode=block
+      Date:
+      - Sat, 19 Sep 2020 07:32:23 GMT
+      Content-Length:
+      - '96'
+    body:
+      encoding: UTF-8
+      string: '{"name":"Makisu Software Consulting Services Agent","id":"91865374-af28-4c3d-b3a8-0b0d9a0e6d42"}'
+  recorded_at: Sat, 19 Sep 2020 07:32:23 GMT
+recorded_with: VCR 6.0.0

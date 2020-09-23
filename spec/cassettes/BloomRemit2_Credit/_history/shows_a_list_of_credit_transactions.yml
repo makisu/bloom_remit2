@@ -1,0 +1,57 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://www.bloomremit.net/api/v1/partners/73b353d4-03c0-4b8e-a141-e91552a0c6d5/credits/history
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      X-Api-Secret:
+      - 2d9273284f9ebbb4c5734638f1f50a3d
+      Cache-Control:
+      - no-cache
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"d80bdc3b750359fc79daaff809fba74c"
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+      X-Content-Type-Options:
+      - nosniff
+      X-Download-Options:
+      - noopen
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      X-Request-Id:
+      - 67b8fa79-a7e1-4c76-80c5-9c9e7b111c2f
+      X-Runtime:
+      - '0.046252'
+      X-Xss-Protection:
+      - 1; mode=block
+      Date:
+      - Sat, 19 Sep 2020 08:25:21 GMT
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: '[{"amount_in_php":-100.0,"balance":23175.747119224,"consumed":true,"created_at":"2020-09-15T14:51:45.227+08:00","id":527631,"item_id":"251204","item_type":"Settlement","rate":1.0,"source_amount":"-100.0","source_currency":"PHP","target_amount":-100.0,"target_currency":"PHP","updated_at":"2020-09-15T14:51:45.227+08:00"},{"amount_in_php":-3150.25,"balance":23275.747119224,"consumed":true,"created_at":"2020-09-15T14:51:45.214+08:00","id":527630,"item_id":"251204","item_type":"Settlement","rate":1.0,"source_amount":"-3150.25","source_currency":"PHP","target_amount":-3150.25,"target_currency":"PHP","updated_at":"2020-09-15T14:51:45.214+08:00"},{"amount_in_php":-100.0,"balance":26425.997119224,"consumed":true,"created_at":"2020-09-15T14:51:42.067+08:00","id":527629,"item_id":"251202","item_type":"Settlement","rate":1.0,"source_amount":"-100.0","source_currency":"PHP","target_amount":-100.0,"target_currency":"PHP","updated_at":"2020-09-15T14:51:42.067+08:00"},{"amount_in_php":-1666.66,"balance":26525.997119224,"consumed":true,"created_at":"2020-09-15T14:51:42.047+08:00","id":527628,"item_id":"251202","item_type":"Settlement","rate":1.0,"source_amount":"-1666.66","source_currency":"PHP","target_amount":-1666.66,"target_currency":"PHP","updated_at":"2020-09-15T14:51:42.047+08:00"},{"amount_in_php":-100.0,"balance":28192.657119224,"consumed":true,"created_at":"2020-09-15T14:51:40.882+08:00","id":527627,"item_id":"251200","item_type":"Settlement","rate":1.0,"source_amount":"-100.0","source_currency":"PHP","target_amount":-100.0,"target_currency":"PHP","updated_at":"2020-09-15T14:51:40.882+08:00"},{"amount_in_php":-17500.0,"balance":28292.657119224,"consumed":true,"created_at":"2020-09-15T14:51:40.867+08:00","id":527626,"item_id":"251200","item_type":"Settlement","rate":1.0,"source_amount":"-17500.0","source_currency":"PHP","target_amount":-17500.0,"target_currency":"PHP","updated_at":"2020-09-15T14:51:40.867+08:00"},{"amount_in_php":-100.0,"balance":45792.657119224,"consumed":true,"created_at":"2020-09-15T14:51:36.966+08:00","id":527625,"item_id":"251198","item_type":"Settlement","rate":1.0,"source_amount":"-100.0","source_currency":"PHP","target_amount":-100.0,"target_currency":"PHP","updated_at":"2020-09-15T14:51:36.966+08:00"},{"amount_in_php":-17250.0,"balance":45892.657119224,"consumed":true,"created_at":"2020-09-15T14:51:36.954+08:00","id":527624,"item_id":"251198","item_type":"Settlement","rate":1.0,"source_amount":"-17250.0","source_currency":"PHP","target_amount":-17250.0,"target_currency":"PHP","updated_at":"2020-09-15T14:51:36.954+08:00"},{"amount_in_php":-30.0,"balance":63142.657119224,"consumed":true,"created_at":"2020-09-15T14:51:36.708+08:00","id":527623,"item_id":"251196","item_type":"Settlement","rate":1.0,"source_amount":"-30.0","source_currency":"PHP","target_amount":-30.0,"target_currency":"PHP","updated_at":"2020-09-15T14:51:36.708+08:00"},{"amount_in_php":-12500.0,"balance":63172.657119224,"consumed":true,"created_at":"2020-09-15T14:51:36.696+08:00","id":527622,"item_id":"251196","item_type":"Settlement","rate":1.0,"source_amount":"-12500.0","source_currency":"PHP","target_amount":-12500.0,"target_currency":"PHP","updated_at":"2020-09-15T14:51:36.696+08:00"},{"amount_in_php":-100.0,"balance":75672.657119224,"consumed":true,"created_at":"2020-09-15T14:51:30.281+08:00","id":527621,"item_id":"251194","item_type":"Settlement","rate":1.0,"source_amount":"-100.0","source_currency":"PHP","target_amount":-100.0,"target_currency":"PHP","updated_at":"2020-09-15T14:51:30.281+08:00"},{"amount_in_php":-12500.0,"balance":75772.657119224,"consumed":true,"created_at":"2020-09-15T14:51:30.241+08:00","id":527620,"item_id":"251194","item_type":"Settlement","rate":1.0,"source_amount":"-12500.0","source_currency":"PHP","target_amount":-12500.0,"target_currency":"PHP","updated_at":"2020-09-15T14:51:30.241+08:00"},{"amount_in_php":-100.0,"balance":88272.657119224,"consumed":true,"created_at":"2020-09-15T14:51:30.237+08:00","id":527619,"item_id":"251193","item_type":"Settlement","rate":1.0,"source_amount":"-100.0","source_currency":"PHP","target_amount":-100.0,"target_currency":"PHP","updated_at":"2020-09-15T14:51:30.237+08:00"},{"amount_in_php":-12500.0,"balance":88372.657119224,"consumed":true,"created_at":"2020-09-15T14:51:30.219+08:00","id":527618,"item_id":"251193","item_type":"Settlement","rate":1.0,"source_amount":"-12500.0","source_currency":"PHP","target_amount":-12500.0,"target_currency":"PHP","updated_at":"2020-09-15T14:51:30.219+08:00"},{"amount_in_php":100269.237119224,"balance":100872.657119224,"consumed":false,"created_at":"2020-09-15T07:36:22.304+08:00","id":527563,"item_id":"725","item_type":"ExchangeTxn","rate":1.0,"source_amount":"100269.2371192241001897366907326","source_currency":"PHP","target_amount":100269.237119224,"target_currency":"PHP","updated_at":"2020-09-15T07:36:22.497+08:00"},{"amount_in_php":-100.0,"balance":603.42,"consumed":true,"created_at":"2020-08-28T12:27:06.009+08:00","id":524926,"item_id":"248587","item_type":"Settlement","rate":1.0,"source_amount":"-100.0","source_currency":"PHP","target_amount":-100.0,"target_currency":"PHP","updated_at":"2020-08-28T12:27:06.009+08:00"},{"amount_in_php":-26250.0,"balance":703.42,"consumed":true,"created_at":"2020-08-28T12:27:05.995+08:00","id":524925,"item_id":"248587","item_type":"Settlement","rate":1.0,"source_amount":"-26250.0","source_currency":"PHP","target_amount":-26250.0,"target_currency":"PHP","updated_at":"2020-08-28T12:27:05.995+08:00"},{"amount_in_php":-100.0,"balance":26953.42,"consumed":true,"created_at":"2020-08-28T12:27:04.731+08:00","id":524924,"item_id":"248585","item_type":"Settlement","rate":1.0,"source_amount":"-100.0","source_currency":"PHP","target_amount":-100.0,"target_currency":"PHP","updated_at":"2020-08-28T12:27:04.731+08:00"},{"amount_in_php":-16875.04,"balance":27053.42,"consumed":true,"created_at":"2020-08-28T12:27:04.716+08:00","id":524923,"item_id":"248585","item_type":"Settlement","rate":1.0,"source_amount":"-16875.04","source_currency":"PHP","target_amount":-16875.04,"target_currency":"PHP","updated_at":"2020-08-28T12:27:04.716+08:00"},{"amount_in_php":-100.0,"balance":43928.46,"consumed":true,"created_at":"2020-08-28T12:27:00.684+08:00","id":524922,"item_id":"248583","item_type":"Settlement","rate":1.0,"source_amount":"-100.0","source_currency":"PHP","target_amount":-100.0,"target_currency":"PHP","updated_at":"2020-08-28T12:27:00.684+08:00"},{"amount_in_php":-12500.0,"balance":44028.46,"consumed":true,"created_at":"2020-08-28T12:27:00.673+08:00","id":524921,"item_id":"248583","item_type":"Settlement","rate":1.0,"source_amount":"-12500.0","source_currency":"PHP","target_amount":-12500.0,"target_currency":"PHP","updated_at":"2020-08-28T12:27:00.673+08:00"},{"amount_in_php":-100.0,"balance":56528.46,"consumed":true,"created_at":"2020-08-28T12:26:59.855+08:00","id":524920,"item_id":"248581","item_type":"Settlement","rate":1.0,"source_amount":"-100.0","source_currency":"PHP","target_amount":-100.0,"target_currency":"PHP","updated_at":"2020-08-28T12:26:59.855+08:00"},{"amount_in_php":-12500.0,"balance":56628.46,"consumed":true,"created_at":"2020-08-28T12:26:59.845+08:00","id":524919,"item_id":"248581","item_type":"Settlement","rate":1.0,"source_amount":"-12500.0","source_currency":"PHP","target_amount":-12500.0,"target_currency":"PHP","updated_at":"2020-08-28T12:26:59.845+08:00"},{"amount_in_php":-100.0,"balance":69128.46,"consumed":true,"created_at":"2020-08-28T12:26:53.130+08:00","id":524918,"item_id":"248579","item_type":"Settlement","rate":1.0,"source_amount":"-100.0","source_currency":"PHP","target_amount":-100.0,"target_currency":"PHP","updated_at":"2020-08-28T12:26:53.130+08:00"},{"amount_in_php":-28434.0,"balance":69228.46,"consumed":true,"created_at":"2020-08-28T12:26:53.118+08:00","id":524917,"item_id":"248579","item_type":"Settlement","rate":1.0,"source_amount":"-28434.0","source_currency":"PHP","target_amount":-28434.0,"target_currency":"PHP","updated_at":"2020-08-28T12:26:53.118+08:00"},{"amount_in_php":97662.46,"balance":97662.46,"consumed":false,"created_at":"2020-08-28T08:35:01.703+08:00","description":"https://trade.bloom.solutions/dashboard/orders/19964","id":524739,"rate":1.0,"source_amount":"97662.46","source_currency":"PHP","target_amount":97662.46,"target_currency":"PHP","updated_at":"2020-08-28T08:35:01.703+08:00"}]'
+  recorded_at: Sat, 19 Sep 2020 08:25:21 GMT
+recorded_with: VCR 6.0.0

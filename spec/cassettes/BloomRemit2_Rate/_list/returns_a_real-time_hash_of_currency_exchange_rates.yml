@@ -1,0 +1,57 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://www.bloomremit.net/api/v1/rates?partner_id=73b353d4-03c0-4b8e-a141-e91552a0c6d5
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      X-Api-Secret:
+      - 2d9273284f9ebbb4c5734638f1f50a3d
+      Cache-Control:
+      - no-cache
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"2fa8e34fcd4866c2fa59f88adda04d7e"
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+      X-Content-Type-Options:
+      - nosniff
+      X-Download-Options:
+      - noopen
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      X-Request-Id:
+      - b08277fb-6200-47cc-986a-f7711d622837
+      X-Runtime:
+      - '0.068565'
+      X-Xss-Protection:
+      - 1; mode=block
+      Date:
+      - Sat, 19 Sep 2020 08:55:27 GMT
+      Content-Length:
+      - '1424'
+    body:
+      encoding: UTF-8
+      string: '{"BCHUSD":230.3799894,"BTCCNY":73108.50830447362,"BTCIDR":160310608.92,"BTCPHP":523602.64549767127,"BTCUSD":10803.6880974,"BTCUSDT":10802.4913953,"DASHPHP":3454.7014261786194,"DASHUSD":71.26014852,"ETHPHP":18175.396513927848,"ETHUSD":374.7853395,"INRNPR":1.5898335749998522,"LINKUSDT":10.057638294,"LTCUSD":47.5911612,"PHPAED":0.075070149443289,"PHPAUD":0.02803772034063,"PHPCAD":0.026989017164109,"PHPCNY":0.138367904136462,"PHPEUR":0.017265018068298,"PHPGBP":0.015820314395886,"PHPHKD":0.158421119939082,"PHPIDR":303.11365112953223,"PHPINR":1.504588788040338,"PHPJPY":2.137407183662751,"PHPKRW":23.816720419066574,"PHPMYR":0.084105819569772,"PHPNPR":2.418626476758492,"PHPSGD":0.027780757228224,"PHPTHB":0.635535033275142,"PHPUSD":0.020441157072336,"PHPVND":473.9372303466921,"PHPZAR":0.333839028466944,"USDAED":3.632139225,"USDAUD":1.35655656069483,"USDCAD":1.305816873599403,"USDCNY":6.694691508114984,"USDEUR":0.835338012210603,"USDGBP":0.765438526736532,"USDHKD":7.664931640972782,"USDIDR":14665.629281902668,"USDINR":72.79692387522311,"USDJPY":103.41474646015013,"USDKRW":1152.3307877283676,"USDMYR":4.069314480824307,"USDNPR":117.02105512941027,"USDPHP":47.947335621198846,"USDSGD":1.344123848611071,"USDTHB":30.749262393410152,"USDVND":22930.632445144514,"USDZAR":16.152223473881254,"USDTPHP":47.95506438069235,"XLMBTC":7.0021908e-06,"XLMUSD":0.076466514346596,"XRPUSD":0.2455118424,"PHPBTC":1.9098452015068123e-06}'
+  recorded_at: Sat, 19 Sep 2020 08:55:27 GMT
+recorded_with: VCR 6.0.0
