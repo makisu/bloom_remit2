@@ -1,4 +1,5 @@
 # BloomRemit Ruby Library
+[![CircleCI](https://circleci.com/gh/makisu/bloom_remit2.svg?style=svg)](https://circleci.com/gh/makisu/bloom_remit2)
 
 Ruby wrapper for BloomRemit's API
 
