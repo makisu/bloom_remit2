@@ -152,8 +152,7 @@ sender_id = 'xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx'
 BloomRemit2::Recipient.list(sender_id)
 ```
 
-### Show details about a recipient of a given user, and their associated remittance
-IDs
+### Show details about a recipient of a given user, and their associated remittance IDs
 ```ruby
 # GET /api/v1/partners/:api_token/senders/:sender_id/recipients/:id
 
