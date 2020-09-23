@@ -36,7 +36,7 @@ end
 
 ## Partners
 
-Shows partner details
+### Shows partner details
 ```ruby
 # GET /api/v1/partners/:api_token
 
@@ -45,7 +45,7 @@ BloomRemit2::Partner.retrieve
 
 ## Agents
 
-Show a list of agents belonging to this partner
+### Show a list of agents belonging to this partner
 ```ruby
 # GET /api/v1/partners/:api_token/agents
 # Return a list of agents created by this partner, sorted by newest first.
@@ -53,22 +53,22 @@ Show a list of agents belonging to this partner
 BloomRemit2::Agent.list
 ```
 
-Show an agent belonging to this partner
+### Show an agent belonging to this partner
 ```ruby
 # GET /api/v1/partners/:api_token/:agents/:id
 
 BloomRemit2::Agent.retrieve('xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx')
 ```
 
-Create a new agent under this partner
+### Create a new agent under this partner
 ```ruby
 # POST /api/v1/partners/:api_token/agents
 
-BloomRemit2::Agent.create({ name: 'Seoul Branch' })
+BloomRemit2::Agent.create('Seoul Branch')
 ```
 
-**TODO: Update doesn't work at the moment**
-Update the attributes of an agent belonging to this partner
+### Update the attributes of an agent belonging to this partner
+**TODO: Needs to be implemented; update doesn't work at the moment**
 ```ruby
 # PUT /api/v1/partners/:api_token/agents/:id
 
@@ -79,7 +79,7 @@ BloomRemit2::Agent.update(
 )
 ```
 
-Delete an agent belonging to this partner
+### Delete an agent belonging to this partner
 ```ruby
 # DELETE /api/v1/partners/:api_token/agents/:id
 
@@ -89,15 +89,15 @@ BloomRemit2::Agent.delete(agent_id)
 
 ## Credits
 
-Retrieve a credit address
-**TODO:** This returns a 500 Internal Server Error
+### Retrieve a credit address
+**TODO: Needs to be implemented; this returns a 500 Internal Server Error**
 ```ruby
 # GET /api/v1/partners/:api_token/credits
 
 BloomRemit2::Credit.list
 ```
 
-Show a list of credit transactions
+### Show a list of credit transactions
 ```ruby
 # GET /api/v1/partners/:api_token/credits/history
 
@@ -106,7 +106,7 @@ BloomRemit2::Credit.history
 
 ## Rates
 
-Returns a real-time hash of currency exchange rates. Updates every minute
+### Returns a real-time hash of currency exchange rates. Updates every minute
 ```ruby
 # GET /api/v1/rates
 
@@ -125,7 +125,7 @@ The rate returned is defined as:
 
 ## Recipients
 
-Create a new recipient for a sender belonging to this partner
+### Create a new recipient for a sender belonging to this partner
 ```ruby
 # POST /api/v1/partners/:api_token/recipients
 
@@ -144,7 +144,7 @@ BloomRemit2::Recipient.create(
 )
 ```
 
-List all recipients for a user belonging to this partner
+### List all recipients for a user belonging to this partner
 ```ruby
 # GET /api/v1/partners/:api_token/senders/:sender_id/recipients
 
@@ -152,7 +152,7 @@ sender_id = 'xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx'
 BloomRemit2::Recipient.list(sender_id)
 ```
 
-Show details about a recipient of a given user, and their associated remittance
+### Show details about a recipient of a given user, and their associated remittance
 IDs
 ```ruby
 # GET /api/v1/partners/:api_token/senders/:sender_id/recipients/:id
@@ -162,7 +162,7 @@ recipient_id = 'xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx'
 BloomRemit2::Recipient.retrieve(sender_id, recipient_id)
 ```
 
-Update the attributes of a recipient of a user belonging to this partner
+### Update the attributes of a recipient of a user belonging to this partner
 ```ruby
 # PUT /api/v1/partners/:api_token/senders/:sender_id/recipients/:id
 
@@ -184,7 +184,7 @@ BloomRemit2::Recipient.update(
 )
 ```
 
-Delete recipient record of a user belonging to this partner safely
+### Delete recipient record of a user belonging to this partner safely
 ```ruby
 # DELETE /api/v1/partners/:api_token/senders/:sender_id/recipients/:id
 
@@ -195,7 +195,7 @@ BloomRemit2::Recipient.delete(sender_id, recipient_id)
 
 ## Remittances
 
-Show all remittances belonging to the given user
+### Show all remittances belonging to the given user
 ```ruby
 # GET /api/v1/partners/:api_token/senders/:sender_id/remittances
 
@@ -203,7 +203,8 @@ sender_id = 'xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx'
 BloomRemit2::Remittance.list(sender_id)
 ```
 
-Initiate a new money transfer by providing a recipient_id and a remittance hash
+### Initiate a new money transfer by providing a recipient_id and a remittance hash
+**TODO: Need to add tests**
 ```ruby
 # POST /api/v1/partners/:api_token/senders/:sender_id/remittances
 
@@ -226,9 +227,10 @@ BloomRemit2::Remittance.execute(
     }
   }
 )
+=> remittance hash, not a BloomRemit2::Remittance
 ```
 
-Show information about a given recipient along with their associated remittance
+### Show information about a given recipient along with their associated remittance
 ```ruby
 # GET /api/v1/partners/:api_token/senders/:sender_id/remittances/:id
 
@@ -237,7 +239,10 @@ remittance_id = 'xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx'
 BloomRemit2::Remittance.retrieve(sender_id, remittance_id)
 ```
 
-Cancel a remittance. Note that this change the status of the remittance to
+### Cancel a remittance
+**TODO: Need to add tests**
+
+Note that this change the status of the remittance to
 'cancelled' and refunds the partner credits used, but does not delete it from
 the database
 ```ruby
@@ -246,10 +251,11 @@ the database
 sender_id = 'xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx'
 remittance_id = 'xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx'
 BloomRemit2::Remittance.cancel(sender_id, remittance_id)
+=> remittance_hash, not a BloomRemit2::Remittance
 ```
 
-**TODO: This returns a 500 Internal Server error**
-Returns the total fees for a remittance amount and payout method
+### Returns the total fees for a remittance amount and payout method
+**TODO: Needs to be implemented; this returns a 500 Internal Server error**
 
 In order to calculate the cost of a given remittance, you will need to provide
 an amount, a currency, and a payout_method. You may provide either the
@@ -284,20 +290,20 @@ BloomRemit2::Remittance.calculate(
 
 ## Sender uploads
 
-TODO
+**TODO: Needs to be implemented**
 
 ## Senders
 
-Show a list of senders belonging to this partner
+### Show a list of senders belonging to this partner
 
-Return a list of senders created by this partner, sorted by newest first
+Returns a list of senders created by this partner, sorted by newest first
 ```ruby
 # GET /api/v1/partners/:api_token/senders
 
 BloomRemit2::Sender.list
 ```
 
-Show a sender belonging to this partner
+### Show a sender belonging to this partner
 ```ruby
 # GET /api/v1/partners/:api_token/senders/:id
 
@@ -305,21 +311,22 @@ sender_id = 'xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx'
 BloomRemit2::Sender.retrieve(sender_id)
 ```
 
-Show a sender belonging to this partner by supplying their email address
+### Show a sender belonging to this partner by supplying their email address
 ```ruby
 # GET /api/v1/partners/:api_token/senders/find_by_email
 
 BloomRemit2::Sender.find_by_email('helloluis@me.com')
 ```
 
-Show a sender belonging to this partner by supplying their mobile
+### Show a sender belonging to this partner by supplying their mobile
+**TODO: Needs to be implemented**
 ```ruby
-# GET /api/v1/partners/:api_token/senders/find_by_email
+# GET /api/v1/partners/:api_token/senders/find_by_mobile
 
 BloomRemit2::Sender.find_by_mobile('639171234567')
 ```
 
-Create a new sender under this partner
+### Create a new sender under this partner
 ```ruby
 # POST /api/v1/partners/:api_token/senders
 
@@ -337,7 +344,7 @@ BloomRemit2::Sender.create({
 })
 ```
 
-Update the attributes of a sender belonging to this partner
+### Update the attributes of a sender belonging to this partner
 ```ruby
 # PUT /api/v1/partners/:api_token/senders/:id
 
@@ -358,7 +365,7 @@ BloomRemit2::Sender.update(
 )
 ```
 
-Delete a sender belonging to this partner
+### Delete a sender belonging to this partner
 ```ruby
 # DELETE /api/v1/partners/:api_token/senders/:id
 
@@ -368,7 +375,8 @@ BloomRemit2::Sender.delete(sender_id)
 
 ## Static
 
-Lists remittance strategies
+### Lists remittance strategies
+**TODO: Needs to be implemented**
 ```ruby
 # GET /api/v1/strategies
 
