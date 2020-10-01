@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    bloom_remit2 (0.1.0)
+    bloom_remit2 (0.1.1)
       activesupport
       gem_config
       httparty

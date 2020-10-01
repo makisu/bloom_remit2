@@ -1,0 +1,61 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://staging.bloomremit.net/api/v1/partners/cdd7002e-4f8e-4ab8-bc0d-5a6871d24cce/senders/5c9ed3d8-3a0f-4c0b-9451-ceae340fd863/remittances
+    body:
+      encoding: UTF-8
+      string: '{"recipient_id":"9f77f253-3033-4247-97ac-249bc084b595","remittance":{"account_name":"Juan
+        Dela Cruz","account_number":"1234567890","dest_currency":"PHP","flat_fee_in_orig_currency":0,"forex_margin":0,"orig_currency":"PHP","payout_method":"BPI","receivable_in_dest_currency":25000}}'
+    headers:
+      X-Api-Secret:
+      - 03faa3251f21341fa9cad5d223f996de
+      Cache-Control:
+      - no-cache
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"5a7c16fe20061b97132e708f8e3d2718"
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+      X-Content-Type-Options:
+      - nosniff
+      X-Download-Options:
+      - noopen
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      X-Request-Id:
+      - ed909fcd-7af1-4a32-8cc6-176244a6e891
+      X-Runtime:
+      - '0.351161'
+      X-Xss-Protection:
+      - 1; mode=block
+      Date:
+      - Thu, 01 Oct 2020 06:00:48 GMT
+      Content-Length:
+      - '596'
+    body:
+      encoding: UTF-8
+      string: '{"remittance":{"id":"37904924-1399-43d7-85ce-256a08d55bec","partner_id":"200b82c6-9972-4514-bd35-49a6b98b6bc7","recipient_id":"9f77f253-3033-4247-97ac-249bc084b595","orig_currency":"PHP","dest_currency":"PHP","paid_in_orig_currency":25100.0,"receivable_in_dest_currency":25000.0,"forex_margin":0.0,"flat_fee_in_orig_currency":0.0,"payout_method":"BPI","status":"waiting","account_name":"Juan
+        Dela Cruz","account_number":"1234567890","teller_id":"dbb18f9c-e271-44da-911a-ed472917a816","sender_id":"5c9ed3d8-3a0f-4c0b-9451-ceae340fd863","client_external_id":"75cc363f-c9fe-478a-8ef7-d58cc8ef0a39"}}'
+  recorded_at: Thu, 01 Oct 2020 06:00:48 GMT
+recorded_with: VCR 6.0.0

@@ -203,7 +203,7 @@ BloomRemit2::Remittance.list(sender_id)
 ```
 
 ### Initiate a new money transfer by providing a recipient_id and a remittance hash
-**TODO: Need to add tests**
+Use either `paid_in_orig_currency` or `receivable_in_dest_currency` and not both as this will result in a 500 Internal Server error.
 ```ruby
 # POST /api/v1/partners/:api_token/senders/:sender_id/remittances
 
@@ -220,7 +220,7 @@ BloomRemit2::Remittance.execute(
       flat_fee_in_orig_currency: 0,
       forex_margin: 0,
       orig_currency: 'PHP',
-      paid_in_orig_currency: 0,
+      # paid_in_orig_currency: 0,
       payout_method: 'BPI',
       receivable_in_dest_currency: 25000
     }
@@ -251,40 +251,6 @@ sender_id = 'xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx'
 remittance_id = 'xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx'
 BloomRemit2::Remittance.cancel(sender_id, remittance_id)
 => remittance_hash, not a BloomRemit2::Remittance
-```
-
-### Returns the total fees for a remittance amount and payout method
-**TODO: Needs to be implemented; this returns a 500 Internal Server error**
-
-In order to calculate the cost of a given remittance, you will need to provide
-an amount, a currency, and a payout_method. You may provide either the
-origin_amount (the money paid by the sender), or the destination_amount (the
-money received by the beneficiary), and the calculator will compute the fees
-automatically.
-
-If you provide the origin_amount, the calculator will give you the amount
-receivable at the destination of the remittance. If you provide the
-destination_amount, the calculator will give you the amount that must be paid by
-the sender at the point of origin.
-```ruby
-# POST /api/v1/partners/:api_token/remittances/calculate
-
-BloomRemit2::Remittance.calculate(
-  origin_amount: 15000,
-  origin_currency: 'PHP',
-  payout_method: 'BPI'
-)
-
-BloomRemit2::Remittance.calculate(
-  destination_amount: 10000,
-  destination_currency: 'PHP',
-  payout_method: 'BPI'
-)
-
-BloomRemit2::Remittance.calculate(
-  origin_amount: 125000,
-  payout_method: 'BPI'
-)
 ```
 
 ## Sender uploads

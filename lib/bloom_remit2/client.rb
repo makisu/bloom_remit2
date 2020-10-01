@@ -3,26 +3,38 @@ require 'httparty'
 module BloomRemit2
   class Client
     class << self
-      def get(path, headers = default_get_headers, query: {})
-        HTTParty.get(url(path), { query: query, headers: headers })
+      def get(path, headers = default_get_headers, query: {}, staging: false)
+        the_url = url(path)
+        the_url = staging_url(path) if staging
+        HTTParty.get(the_url, { query: query, headers: headers })
       end
 
-      def post(path, body = {}, headers = default_post_headers)
-        HTTParty.post(url(path), { body: body.to_json, headers: headers })
+      def post(path, body = {}, staging = false, headers = default_post_headers)
+        the_url = url(path)
+        the_url = staging_url(path) if staging
+        HTTParty.post(the_url, { body: body.to_json, headers: headers })
       end
 
-      def put(path, body = [], headers = default_put_headers)
-        HTTParty.put(url(path), { body: URI.encode_www_form(body), headers: headers })
+      def put(path, body = [], headers = default_put_headers, staging: false)
+        the_url = url(path)
+        the_url = staging_url(path) if staging
+        HTTParty.put(the_url, { body: URI.encode_www_form(body), headers: headers })
       end
 
-      def delete(path, headers = default_get_headers)
-        HTTParty.delete(url(path), { headers: headers })
+      def delete(path, headers = default_get_headers, staging: false)
+        the_url = url(path)
+        the_url = staging_url(path) if staging
+        HTTParty.delete(the_url, { headers: headers })
       end
 
       private
 
       def base_url
         'https://www.bloomremit.net'
+      end
+
+      def staging_url(path)
+        "https://staging.bloomremit.net/#{path}"
       end
 
       def url(path)
