@@ -2,8 +2,38 @@ module BloomRemit2
   class Remittance
     class << self
       # Initiate a new money transfer by providing a recipient_id and remittance hash
-      def execute(sender_id, remittance_hash)
-        remittance = Client.post(path(sender_id))
+      def execute(sender_id, remittance_hash, staging: false)
+        result = Client.post(path(sender_id), remittance_hash, staging)
+        remittance = result['remittance'].with_indifferent_access
+        new(
+          remittance[:id],
+          remittance[:partner_id],
+          remittance[:orig_currency],
+          remittance[:dest_currency],
+          remittance[:paid_in_orig_currency],
+          remittance[:forex_margin],
+          remittance[:flat_fee_in_orig_currency],
+          remittance[:payout_method],
+          remittance[:status],
+          remittance[:account_name],
+          remittance[:account_number],
+          remittance[:teller_id],
+          remittance[:sender_id],
+          remittance[:client_external_id],
+          recipient: Recipient.new(
+            remittance[:recipient_id],
+            remittance[:sender_id],
+            nil,
+            nil,
+            nil,
+            nil,
+            nil,
+            nil,
+            nil,
+            nil,
+            nil
+          )
+        )
       end
 
       # Cancel a remittance
@@ -69,19 +99,6 @@ module BloomRemit2
         )
       end
 
-      # TODO: Returns 500 Internal Server Error
-      # Returns the total fees for a given remittance amount and payout method
-      # def calculate_fees(payout_method, origin_amount: nil, origin_currency: nil, destination_amount: nil, destination_currency: nil)
-      #   remittance = Client.post(path_for_calculate, fees_hash)
-      # end
-
-      private
-
-      # TODO: Uncomment when implementing .calculate_fees
-      # def path_for_calculate
-      #   "api/v1/partners/#{BloomRemit2.configuration.api_token}/remittances/calculate"
-      # end
-
       def path(sender_id)
         "api/v1/partners/#{BloomRemit2.configuration.api_token}/senders/#{sender_id}/remittances"
       end
@@ -123,9 +140,9 @@ module BloomRemit2
       @flat_fee_in_orig_currency = flat_fee_in_orig_currency
       @payout_method = payout_method 
       @status = status
-      @account_name = account_name,
-      @account_number = account_number,
-      @teller_id = teller_id,
+      @account_name = account_name
+      @account_number = account_number
+      @teller_id = teller_id
       @sender_id = sender_id
       @client_external_id = client_external_id
       @recipient = recipient
